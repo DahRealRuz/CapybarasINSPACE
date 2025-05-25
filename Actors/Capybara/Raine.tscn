@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://4ulfse8nlyef"]
+
+[ext_resource type="Texture2D" uid="uid://bibveyl2twst6" path="res://Assets/Characters/Capybara/Capybara.png" id="2_vcstu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cx4ft"]
+radius = 14.0
+height = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otos3"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw042"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dpiv"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko1ta"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(384, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48dqy"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(432, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf8xf"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxbck"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kadl"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va3ws"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn32w"]
+atlas = ExtResource("2_vcstu")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7mu4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otos3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw042")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dpiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko1ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48dqy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf8xf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxbck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kadl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va3ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn32w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="Raine" type="CharacterBody2D"]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_cx4ft")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p7mu4")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.967686
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.02, 3.02)
