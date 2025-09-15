@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "XVTuF+1ZgF4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\emort\\Desktop\\Projects\\Godot\\CapybarasINSPACE\\Capybaras IN SPACE!.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emort\\.nuget\\packages\\godot.sourcegenerators\\4.4.1\\godot.sourcegenerators.4.4.1.nupkg.sha512",
+    "C:\\Users\\emort\\.nuget\\packages\\godotsharp\\4.4.1\\godotsharp.4.4.1.nupkg.sha512",
+    "C:\\Users\\emort\\.nuget\\packages\\godotsharpeditor\\4.4.1\\godotsharpeditor.4.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}

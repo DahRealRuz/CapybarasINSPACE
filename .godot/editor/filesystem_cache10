@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1748234857
+icon.svg::CompressedTexture2D::7812097271203701535::1748234337::1748234874::1::::<><><>0<>0<>6f33eed80aef232327bb88e4bb6193e6<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+test scene.tscn::PackedScene::437739578230425880::1748234337::0::1::::<><><>0<>0<><>::uid://djkidonynmh5x::::res://icon.svg<>uid://4ulfse8nlyef::::res://Actors/Capybara/Raine.tscn
+::res://Actors/::1748234337
+::res://Actors/Capybara/::1748234337
+Raine.tscn::PackedScene::2077441789590812085::1748234337::0::1::::<><><>0<>0<><>::uid://bibveyl2twst6::::res://Assets/Characters/Capybara/Capybara.png
+::res://Assets/::1748234337
+::res://Assets/Characters/::1748234337
+::res://Assets/Characters/Capybara/::1748234337
+Capybara.png::CompressedTexture2D::2951279289381420269::1748234337::1748234874::1::::<><><>0<>0<>cab0df9ea6b4465bcab3127098581a3e<>res://.godot/imported/Capybara.png-0215058a4647abea158ef1bad319b5cb.ctex::
+::res://Scenes/::1748234337
+MainMenu.tscn::PackedScene::6104877705996221910::1748234337::0::1::::<><><>0<>0<><>::
