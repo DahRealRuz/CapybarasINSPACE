@@ -30,9 +30,10 @@ project/assembly_name="Capybaras IN SPACE!"
 folder_colors={
 "res://Actors/": "gray",
 "res://Assets/": "red",
-"res://Components/": "teal",
-"res://Resources/": "yellow",
-"res://Scripts/": "purple"
+"res://Scripts/": "purple",
+"res://Utilities/": "yellow",
+"res://Utilities/Components/": "teal",
+"res://Utilities/Resources/": "yellow"
 }
 
 [input]
