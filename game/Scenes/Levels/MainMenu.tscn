@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs8ipdeoebjbi"]
+[gd_scene load_steps=12 format=3 uid="uid://cs8ipdeoebjbi"]
 
 [ext_resource type="Texture2D" uid="uid://bxxmglsy4t0ly" path="res://Assets/BG/space background (1).jpg" id="1_cwjnk"]
+[ext_resource type="Script" uid="uid://5of23qfof10c" path="res://Scripts/Scenes/MainMenu.cs" id="1_iruej"]
 [ext_resource type="Texture2D" uid="uid://yr7t2aa1rx2h" path="res://Assets/SpaceShip/spaceships.png" id="2_iruej"]
-[ext_resource type="Texture2D" uid="uid://dpi04xgkllgdx" path="res://Assets/BG/Nebula.png" id="3_8dgdn"]
 [ext_resource type="Texture2D" uid="uid://8r8rkt06k5jf" path="res://Assets/BG/moon.png" id="4_ybd2e"]
 [ext_resource type="FontFile" uid="uid://ctn70ndhjxhvd" path="res://Assets/UI/Fonts/Eracake.otf" id="5_x0g5v"]
 [ext_resource type="FontFile" uid="uid://bm31ur4kebok2" path="res://Assets/UI/Fonts/Fancake.otf" id="6_82l7r"]
@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spaceships:position")
+tracks/0/path = NodePath("MainMenuImgs/Spaceships:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spaceships:rotation")
+tracks/1/path = NodePath("MainMenuImgs/Spaceships:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -32,6 +32,198 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainMenuImgs/MainBG:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-259, -161)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ContainerForLetters/Capybara/C:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 21)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerForLetters/Capybara/A:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(229, 21)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerForLetters/Capybara/p:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(349, 21)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ContainerForLetters/Capybara/Y:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(466, 21)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ContainerForLetters/Capybara/C:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.354302]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ContainerForLetters/Capybara/B:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(592, 18)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ContainerForLetters/Capybara/B:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ContainerForLetters/Capybara/A2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(716, 21)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ContainerForLetters/Capybara/A2:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ContainerForLetters/Capybara/R:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(840, 21)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ContainerForLetters/Capybara/A3:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(959, 21)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ContainerForLetters/Capybara/A3:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.354302]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ContainerForLetters/Capybara/S:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1075, 21)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ContainerForLetters/Capybara/S:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.53058]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("MainMenuImgs/Moon:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(206, 536)]
 }
 
 [sub_resource type="Animation" id="Animation_lm8k6"]
@@ -41,7 +233,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spaceships:position")
+tracks/0/path = NodePath("MainMenuImgs/Spaceships:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -53,7 +245,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spaceships:rotation")
+tracks/1/path = NodePath("MainMenuImgs/Spaceships:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -62,17 +254,214 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, 0.354302, -0.179769, 0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainMenuImgs/Moon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(206, 536), Vector2(206, 432), Vector2(206, 536)]
+}
 
-[sub_resource type="Animation" id="Animation_p1w1t"]
+[sub_resource type="Animation" id="Animation_8dgdn"]
 resource_name = "starfield_loop"
-length = 30.0
+length = 60.0
 loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenuImgs/MainBG:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 33.2, 60.0333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-259, -161), Vector2(-587, -332), Vector2(-259, -161)]
+}
+
+[sub_resource type="Animation" id="Animation_ybd2e"]
+resource_name = "letters_drifting"
+length = 35.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContainerForLetters/Capybara/C:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 34.9333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(112, 21), Vector2(96, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContainerForLetters/Capybara/A:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(229, 21), Vector2(208, 58)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ContainerForLetters/Capybara/p:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(349, 21), Vector2(336, 9)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ContainerForLetters/Capybara/Y:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(466, 21), Vector2(461, 52)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerForLetters/Capybara/C:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 15.9247),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.354302]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerForLetters/Capybara/B:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 18), Vector2(576, 16)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ContainerForLetters/Capybara/B:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 20.5364),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.354302]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ContainerForLetters/Capybara/A2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(716, 21), Vector2(719, -4.00001)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ContainerForLetters/Capybara/A2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 19.5997),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.354302]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ContainerForLetters/Capybara/R:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(840, 21), Vector2(852, -5)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ContainerForLetters/Capybara/A3:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(959, 21), Vector2(982, 74)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ContainerForLetters/Capybara/A3:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 19.9599),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.354302]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ContainerForLetters/Capybara/S:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1075, 21), Vector2(1113, 3)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ContainerForLetters/Capybara/S:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 21.5452),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.53058]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kv2kq"]
 _data = {
 &"RESET": SubResource("Animation_2xmls"),
+&"letters_drifting": SubResource("Animation_ybd2e"),
 &"spaceshipLoop": SubResource("Animation_lm8k6"),
-&"starfield_loop": SubResource("Animation_p1w1t")
+&"starfield_loop": SubResource("Animation_8dgdn")
 }
 
 [node name="MainMenu" type="Control"]
@@ -82,6 +471,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iruej")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../UIElements")
@@ -94,32 +484,27 @@ position = Vector2(639, 359)
 
 [node name="UIElements" type="Node" parent="."]
 
-[node name="MainBG" type="TextureRect" parent="UIElements"]
+[node name="MainMenuImgs" type="Node" parent="UIElements"]
+
+[node name="MainBG" type="TextureRect" parent="UIElements/MainMenuImgs"]
 anchors_preset = -1
 anchor_left = -0.202344
 anchor_top = -0.223611
 anchor_right = 1.32671
 anchor_bottom = 1.30518
-offset_right = -643.184
-offset_bottom = -361.73
+offset_right = 1200.0
+offset_bottom = 675.0
 scale = Vector2(1.48949, 1.48949)
 texture = ExtResource("1_cwjnk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Spaceships" type="Sprite2D" parent="UIElements"]
+[node name="Spaceships" type="Sprite2D" parent="UIElements/MainMenuImgs"]
 visibility_layer = 2
 position = Vector2(1093, 521)
 scale = Vector2(1.72882, 1.72882)
 texture = ExtResource("2_iruej")
 
-[node name="Galaxy" type="Sprite2D" parent="UIElements"]
-visibility_layer = 2
-position = Vector2(143, 126)
-rotation = -0.0134449
-scale = Vector2(2.44132, 2.48202)
-texture = ExtResource("3_8dgdn")
-
-[node name="Moon" type="Sprite2D" parent="UIElements"]
+[node name="Moon" type="Sprite2D" parent="UIElements/MainMenuImgs"]
 position = Vector2(206, 536)
 rotation = -3.14159
 scale = Vector2(1.20263, -1.20974)
@@ -130,10 +515,12 @@ texture = ExtResource("4_ybd2e")
 [node name="Capybara" type="Node" parent="UIElements/ContainerForLetters"]
 
 [node name="C" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 112.0
-offset_top = 21.0
-offset_right = 199.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.0875
+anchor_top = 0.0291667
+anchor_right = 0.155469
+anchor_bottom = 0.2375
+rotation = -0.354302
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -141,12 +528,14 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "C"
+metadata/_edit_use_anchors_ = true
 
 [node name="A" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 229.0
-offset_top = 21.0
-offset_right = 322.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.178906
+anchor_top = 0.0291667
+anchor_right = 0.251563
+anchor_bottom = 0.2375
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -154,12 +543,14 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "A"
+metadata/_edit_use_anchors_ = true
 
 [node name="p" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 349.0
-offset_top = 21.0
-offset_right = 442.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.272656
+anchor_top = 0.0291667
+anchor_right = 0.345313
+anchor_bottom = 0.2375
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -167,12 +558,14 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "P"
+metadata/_edit_use_anchors_ = true
 
 [node name="Y" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 466.0
-offset_top = 21.0
-offset_right = 566.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.364062
+anchor_top = 0.0291667
+anchor_right = 0.442187
+anchor_bottom = 0.2375
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -180,12 +573,14 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "Y"
+metadata/_edit_use_anchors_ = true
 
 [node name="B" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 592.0
-offset_top = 18.0
-offset_right = 692.0
-offset_bottom = 168.0
+anchors_preset = -1
+anchor_left = 0.4625
+anchor_top = 0.025
+anchor_right = 0.540625
+anchor_bottom = 0.233333
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -193,12 +588,14 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "B"
+metadata/_edit_use_anchors_ = true
 
 [node name="A2" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 716.0
-offset_top = 21.0
-offset_right = 816.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.559375
+anchor_top = 0.0291667
+anchor_right = 0.6375
+anchor_bottom = 0.2375
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -206,12 +603,14 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "A"
+metadata/_edit_use_anchors_ = true
 
 [node name="R" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 840.0
-offset_top = 21.0
-offset_right = 940.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.65625
+anchor_top = 0.0291667
+anchor_right = 0.734375
+anchor_bottom = 0.2375
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -219,12 +618,15 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "r"
+metadata/_edit_use_anchors_ = true
 
 [node name="A3" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 959.0
-offset_top = 21.0
-offset_right = 1059.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.749219
+anchor_top = 0.0291667
+anchor_right = 0.827344
+anchor_bottom = 0.2375
+rotation = -0.354302
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -232,12 +634,15 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "a"
+metadata/_edit_use_anchors_ = true
 
 [node name="S" type="Label" parent="UIElements/ContainerForLetters/Capybara"]
-offset_left = 1075.0
-offset_top = 21.0
-offset_right = 1175.0
-offset_bottom = 171.0
+anchors_preset = -1
+anchor_left = 0.839844
+anchor_top = 0.0291667
+anchor_right = 0.917969
+anchor_bottom = 0.2375
+rotation = 0.53058
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -245,12 +650,14 @@ theme_override_constants/outline_size = 35
 theme_override_fonts/font = ExtResource("5_x0g5v")
 theme_override_font_sizes/font_size = 151
 text = "S"
+metadata/_edit_use_anchors_ = true
 
 [node name="IN SPACE" type="Label" parent="UIElements/ContainerForLetters"]
-offset_left = 325.0
-offset_top = 203.0
-offset_right = 964.0
-offset_bottom = 353.0
+anchors_preset = -1
+anchor_left = 0.253906
+anchor_top = 0.226389
+anchor_right = 0.753125
+anchor_bottom = 0.434722
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -260,40 +667,55 @@ theme_override_font_sizes/font_size = 151
 text = "IN SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UIElements"]
+[node name="ButtonsContainer" type="VBoxContainer" parent="UIElements"]
 anchors_preset = -1
 anchor_left = 0.394531
 anchor_top = 0.502778
 anchor_right = 0.623438
 anchor_bottom = 0.952778
-offset_top = 3.05176e-05
+offset_left = -22.9997
+offset_top = -52.0002
+offset_right = -23.0006
+offset_bottom = 29.9999
 metadata/_edit_use_anchors_ = true
 
-[node name="PLAY" type="Button" parent="UIElements/VBoxContainer"]
+[node name="PLAY" type="Button" parent="UIElements/ButtonsContainer"]
 layout_mode = 2
+tooltip_text = "Let's save the moon!"
 theme_override_colors/font_color = Color(0.617209, 0.517989, 0.410089, 1)
 theme_override_fonts/font = ExtResource("6_82l7r")
 theme_override_font_sizes/font_size = 66
 text = "PLAY"
 
-[node name="TUTORIAL" type="Button" parent="UIElements/VBoxContainer"]
+[node name="TUTORIAL" type="Button" parent="UIElements/ButtonsContainer"]
 layout_mode = 2
+tooltip_text = "Let's improve those skills!"
 theme_override_colors/font_color = Color(0.617209, 0.517989, 0.410089, 1)
 theme_override_fonts/font = ExtResource("6_82l7r")
 theme_override_font_sizes/font_size = 66
 text = "TUTORIAL"
 
-[node name="SETTINGS" type="Button" parent="UIElements/VBoxContainer"]
+[node name="SETTINGS" type="Button" parent="UIElements/ButtonsContainer"]
 layout_mode = 2
+tooltip_text = "Modify a couple things"
 theme_override_colors/font_color = Color(0.617209, 0.517989, 0.410089, 1)
 theme_override_fonts/font = ExtResource("6_82l7r")
 theme_override_font_sizes/font_size = 66
-text = "SETTINGS
-"
+text = "SETTINGS"
 
-[node name="QUIT" type="Button" parent="UIElements/VBoxContainer"]
+[node name="Credits" type="Button" parent="UIElements/ButtonsContainer"]
 layout_mode = 2
+tooltip_text = "Couldn't be done without these"
+theme_override_colors/font_color = Color(0.617209, 0.517989, 0.410089, 1)
+theme_override_fonts/font = ExtResource("6_82l7r")
+theme_override_font_sizes/font_size = 66
+text = "CREDITS"
+
+[node name="QUIT" type="Button" parent="UIElements/ButtonsContainer"]
+layout_mode = 2
+tooltip_text = "BYYEEE"
 theme_override_colors/font_color = Color(0.617209, 0.517989, 0.410089, 1)
 theme_override_fonts/font = ExtResource("6_82l7r")
 theme_override_font_sizes/font_size = 66
