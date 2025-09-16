@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs8ipdeoebjbi"]
+
+[ext_resource type="Texture2D" uid="uid://bxxmglsy4t0ly" path="res://Assets/BG/space background (1).jpg" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://yr7t2aa1rx2h" path="res://Assets/SpaceShip/spaceships.png" id="2_8saeu"]
+[ext_resource type="Texture2D" uid="uid://dpi04xgkllgdx" path="res://Assets/BG/Nebula.png" id="3_ghw46"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG_IMG" type="Node" parent="."]
+
+[node name="MainBG" type="TextureRect" parent="BG_IMG"]
+offset_left = -259.0
+offset_top = -161.0
+offset_right = 1055.0
+offset_bottom = 578.0
+scale = Vector2(1.48949, 1.48949)
+texture = ExtResource("1_tt5f1")
+
+[node name="Spaceships" type="Sprite2D" parent="BG_IMG"]
+visibility_layer = 2
+position = Vector2(1093, 521)
+scale = Vector2(1.72882, 1.72882)
+texture = ExtResource("2_8saeu")
+
+[node name="Nebula" type="Sprite2D" parent="BG_IMG"]
+visibility_layer = 2
+position = Vector2(171, 126)
+rotation = -0.0134449
+scale = Vector2(2.44132, 2.48202)
+texture = ExtResource("3_ghw46")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(639, 359)
