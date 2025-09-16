@@ -58,7 +58,3 @@ jump={
 
 2d_render/layer_1="star_bg"
 2d_render/layer_2="nebula/space_ship"
-
-[rendering]
-
-textures/canvas_textures/default_texture_filter=0

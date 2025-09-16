@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cs8ipdeoebjbi"]
+[gd_scene load_steps=16 format=3 uid="uid://cs8ipdeoebjbi"]
 
 [ext_resource type="Texture2D" uid="uid://bxxmglsy4t0ly" path="res://Assets/BG/space background (1).jpg" id="1_cwjnk"]
 [ext_resource type="Script" uid="uid://5of23qfof10c" path="res://Scripts/Scenes/MainMenu.cs" id="1_iruej"]
@@ -226,64 +226,6 @@ tracks/17/keys = {
 "values": [Vector2(206, 536)]
 }
 
-[sub_resource type="Animation" id="Animation_lm8k6"]
-resource_name = "spaceship"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MainMenuImgs/Spaceships:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1093, 521), Vector2(1093, 395), Vector2(1093, 521)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MainMenuImgs/Spaceships:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.566667, 1.07, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.354302, -0.179769, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MainMenuImgs/Moon:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(206, 536), Vector2(206, 432), Vector2(206, 536)]
-}
-
-[sub_resource type="Animation" id="Animation_8dgdn"]
-resource_name = "starfield_loop"
-length = 60.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MainMenuImgs/MainBG:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 33.2, 60.0333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-259, -161), Vector2(-587, -332), Vector2(-259, -161)]
-}
-
 [sub_resource type="Animation" id="Animation_ybd2e"]
 resource_name = "letters_drifting"
 length = 35.0
@@ -459,12 +401,134 @@ tracks/13/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kv2kq"]
 _data = {
 &"RESET": SubResource("Animation_2xmls"),
-&"letters_drifting": SubResource("Animation_ybd2e"),
-&"spaceshipLoop": SubResource("Animation_lm8k6"),
-&"starfield_loop": SubResource("Animation_8dgdn")
+&"letters_drifting": SubResource("Animation_ybd2e")
 }
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="Animation" id="Animation_cwjnk"]
+resource_name = "spaceshipLoop"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIElements/MainMenuImgs/Moon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(206, 536), Vector2(206, 461), Vector2(206, 536)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIElements/MainMenuImgs/Spaceships:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1093, 521), Vector2(1093, 397), Vector2(1093, 521)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UIElements/MainMenuImgs/Spaceships:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.2461, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.326377, -0.244346, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iruej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIElements/MainMenuImgs/Moon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(206, 536)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIElements/MainMenuImgs/Spaceships:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1093, 521)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UIElements/MainMenuImgs/Spaceships:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.326377]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8dgdn"]
+_data = {
+&"RESET": SubResource("Animation_iruej"),
+&"spaceshipLoop": SubResource("Animation_cwjnk")
+}
+
+[sub_resource type="Animation" id="Animation_x0g5v"]
+resource_name = "StarfieldDriftLoop"
+length = 120.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIElements/MainMenuImgs/MainBG:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-407, -234), Vector2(-1583, -234)]
+}
+
+[sub_resource type="Animation" id="Animation_82l7r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIElements/MainMenuImgs/MainBG:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-407, -234)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xmls"]
+_data = {
+&"RESET": SubResource("Animation_82l7r"),
+&"StarfieldDriftLoop": SubResource("Animation_x0g5v")
+}
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("LettersDrifting", "Starfield", "Spaceship")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -472,15 +536,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iruej")
+LettersDrifting = NodePath("Animations/LettersDrifting")
+Starfield = NodePath("Animations/StarfieldLoop")
+Spaceship = NodePath("Animations/SpaceshipLoop")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../UIElements")
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(639, 359)
+
+[node name="Animations" type="Node" parent="."]
+
+[node name="LettersDrifting" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../../UIElements")
 libraries = {
 &"": SubResource("AnimationLibrary_kv2kq")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(639, 359)
+[node name="SpaceshipLoop" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_8dgdn")
+}
+
+[node name="StarfieldLoop" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_2xmls")
+}
 
 [node name="UIElements" type="Node" parent="."]
 
@@ -492,15 +573,18 @@ anchor_left = -0.202344
 anchor_top = -0.223611
 anchor_right = 1.32671
 anchor_bottom = 1.30518
-offset_right = 1200.0
-offset_bottom = 675.0
-scale = Vector2(1.48949, 1.48949)
+offset_left = -148.0
+offset_top = -73.0001
+offset_right = 1052.0
+offset_bottom = 602.0
+scale = Vector2(0.926377, 0.926377)
 texture = ExtResource("1_cwjnk")
 metadata/_edit_use_anchors_ = true
 
 [node name="Spaceships" type="Sprite2D" parent="UIElements/MainMenuImgs"]
 visibility_layer = 2
 position = Vector2(1093, 521)
+rotation = 0.326377
 scale = Vector2(1.72882, 1.72882)
 texture = ExtResource("2_iruej")
 
