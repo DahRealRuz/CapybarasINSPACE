@@ -1,11 +1,73 @@
-[gd_scene format=3 uid="uid://cqbwkjc4mj27h"]
+[gd_scene load_steps=6 format=3 uid="uid://cqbwkjc4mj27h"]
 
-[node name="Transition" type="CanvasLayer"]
+[ext_resource type="Script" uid="uid://bry3cb7s5a4yh" path="res://Scripts/Singletons/Transition.cs" id="1_43d83"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[sub_resource type="Animation" id="Animation_lnlky"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.109804, 0.0745098, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dv8rc"]
+resource_name = "Fade_In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.109804, 0.0745098, 0, 0), Color(0.109804, 0.0745098, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lxbkf"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.109804, 0.0745098, 0, 1), Color(0.109804, 0.0745098, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_efx1i"]
+_data = {
+&"FadeIn": SubResource("Animation_lxbkf"),
+&"FadeOut": SubResource("Animation_dv8rc"),
+&"RESET": SubResource("Animation_lnlky")
+}
+
+[node name="Transition" type="CanvasLayer" node_paths=PackedStringArray("TransitionAnimationPlayer", "FadeRect")]
+script = ExtResource("1_43d83")
+TransitionAnimationPlayer = NodePath("AnimationPlayer")
+FadeRect = NodePath("FadeRect")
+
+[node name="FadeRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.127613, 0.0650794, 0, 1)
+color = Color(0.109804, 0.0745098, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_efx1i")
+}
