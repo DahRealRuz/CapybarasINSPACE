@@ -915,3 +915,4 @@ text = "QUIT
 
 [connection signal="animation_finished" from="Animations/CameraAnimations" to="." method="_on_camera_animations_animation_finished"]
 [connection signal="pressed" from="UIElements/ButtonsContainer/PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="UIElements/ButtonsContainer/QUIT" to="." method="_on_quit_pressed"]

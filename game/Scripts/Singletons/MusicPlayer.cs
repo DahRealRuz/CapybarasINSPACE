@@ -8,16 +8,13 @@ public partial class MusicPlayer : AudioStreamPlayer2D
     [ExportCategory("Music")] // This is where I'll put the music for this music player to use woo
     [Export(PropertyHint.File, "*.ogg,*.wav,*.mp3")] public string MenuMusic { get; set; }
 
-
     private string currentMusic = ""; // This will hold what the  song to play
-
     public static MusicPlayer Instance { get; private set; } // Singleton instance
 
     public override void _Ready()
     {
-        Instance = this;
+        Instance = this; 
     }
-
 
     public void PlayMusic(string songName)
     {
@@ -25,7 +22,7 @@ public partial class MusicPlayer : AudioStreamPlayer2D
 
         currentMusic = songName; // Set the current music to the new song
 
-        switch (songName)
+        switch (songName) 
         {
             case "Menu":
                 Stream = GD.Load<AudioStream>(MenuMusic);

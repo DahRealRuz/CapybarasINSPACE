@@ -28,6 +28,11 @@ public partial class MainMenu : Control
         CameraAnimations.Play("MoonTransition");
     }
 
+    private void _on_quit_pressed()
+    {
+        GetTree().Quit();
+    }
+
     private async void _on_camera_animations_animation_finished(string anim_name)
     {
         if (anim_name == "MoonTransition")
