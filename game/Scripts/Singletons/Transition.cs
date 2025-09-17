@@ -5,21 +5,27 @@ using System;
 public partial class Transition : CanvasLayer
 {
     [Signal] public delegate void TransitionFinishedEventHandler(); // Signal to notify when transition is done
-    [Export] private AnimationPlayer TransitionAnimation;
-    [Export] private ColorRect FadeRect;
+    public AnimationPlayer TransitionAnimation;
+    public ColorRect FadeRect;
+
+    public static Transition Instance { get; private set; } // Singleton instance
 
 
     public override void _Ready()
     {
-        FadeRect.Visible = false; // Ensure the fade rect is initially invisible, so it wont block view and u can click whats on the scene
-        TransitionAnimation.AnimationFinished += OnTransitionAnimationFinished; // Connect the signal
+        Instance = this;
+
+        TransitionAnimation = GetNode<AnimationPlayer>("TransitionAnimation");
+        FadeRect = GetNode<ColorRect>("FadeRect");
+
+        TransitionAnimation.Connect("animation_finished", new Callable(this, nameof(OnTransitionAnimationFinished)));
     }
 
     public void OnTransitionAnimationFinished(string anim_name)
     {
         if (anim_name == "FadeOut")
         {
-            OnTransitionFinished.Emit(); // Emit the signal to notify that transition is done
+            EmitSignal(nameof(TransitionFinished)); // Notify that the transition is done
             TransitionAnimation.Play("FadeIn");
         }
 
@@ -28,10 +34,10 @@ public partial class Transition : CanvasLayer
             FadeRect.Visible = false;
         }
     }
-    public void Transition()
+    public void StartTransition()
     {
         FadeRect.Visible = true; // Makes it visible to start the transition
-        TransitionAnimation.play("FadeOut");
+        TransitionAnimation.Play("FadeOut");
     }
 
 

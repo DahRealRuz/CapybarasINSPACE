@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class MainMenu : Control
 {
@@ -13,6 +14,7 @@ public partial class MainMenu : Control
 
     public override void _Ready()
     {
+        Transition.Instance.TransitionAnimation.Play("FadeIn");
         LettersDrifting.Play("letters_drifting");
         Starfield.Play("StarfieldDriftLoop");
         Spaceship.Play("spaceshipLoop");
@@ -25,10 +27,12 @@ public partial class MainMenu : Control
         CameraAnimations.Play("MoonTransition");
     }
 
-    private void _on_camera_animations_animation_finished(string anim_name)
+    private async void _on_camera_animations_animation_finished(string anim_name)
     {
         if (anim_name == "MoonTransition")
         {
+            Transition.Instance.StartTransition();
+            await ToSignal(Transition.Instance, "TransitionFinished");
             GetTree().ChangeSceneToFile("res://Scenes/Levels/europa.tscn");
         }
     }
