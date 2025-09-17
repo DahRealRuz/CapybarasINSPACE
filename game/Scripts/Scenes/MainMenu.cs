@@ -14,6 +14,7 @@ public partial class MainMenu : Control
 
     public override void _Ready()
     {
+        MusicPlayer.Instance.PlayMusic("Menu");
         Transition.Instance.TransitionAnimation.Play("FadeIn");
         LettersDrifting.Play("letters_drifting");
         Starfield.Play("StarfieldDriftLoop");
