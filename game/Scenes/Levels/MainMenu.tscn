@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cs8ipdeoebjbi"]
+[gd_scene load_steps=19 format=3 uid="uid://cs8ipdeoebjbi"]
 
 [ext_resource type="Texture2D" uid="uid://bxxmglsy4t0ly" path="res://Assets/BG/space background (1).jpg" id="1_cwjnk"]
 [ext_resource type="Script" uid="uid://5of23qfof10c" path="res://Scripts/Scenes/MainMenu.cs" id="1_iruej"]
@@ -404,6 +404,45 @@ _data = {
 &"letters_drifting": SubResource("Animation_ybd2e")
 }
 
+[sub_resource type="Animation" id="Animation_iruej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIElements/MainMenuImgs/Moon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(206, 536)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIElements/MainMenuImgs/Spaceships:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1093, 521)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UIElements/MainMenuImgs/Spaceships:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.326377]
+}
+
 [sub_resource type="Animation" id="Animation_cwjnk"]
 resource_name = "spaceshipLoop"
 length = 2.0
@@ -445,49 +484,25 @@ tracks/2/keys = {
 "values": [0.0, 0.326377, -0.244346, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_iruej"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8dgdn"]
+_data = {
+&"RESET": SubResource("Animation_iruej"),
+&"spaceshipLoop": SubResource("Animation_cwjnk")
+}
+
+[sub_resource type="Animation" id="Animation_82l7r"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UIElements/MainMenuImgs/Moon:position")
+tracks/0/path = NodePath("UIElements/MainMenuImgs/MainBG:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(206, 536)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("UIElements/MainMenuImgs/Spaceships:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1093, 521)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("UIElements/MainMenuImgs/Spaceships:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.326377]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8dgdn"]
-_data = {
-&"RESET": SubResource("Animation_iruej"),
-&"spaceshipLoop": SubResource("Animation_cwjnk")
+"values": [Vector2(-407, -234)]
 }
 
 [sub_resource type="Animation" id="Animation_x0g5v"]
@@ -507,28 +522,88 @@ tracks/0/keys = {
 "values": [Vector2(-407, -234), Vector2(-1583, -234)]
 }
 
-[sub_resource type="Animation" id="Animation_82l7r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UIElements/MainMenuImgs/MainBG:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-407, -234)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2xmls"]
 _data = {
 &"RESET": SubResource("Animation_82l7r"),
 &"StarfieldDriftLoop": SubResource("Animation_x0g5v")
 }
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("LettersDrifting", "Starfield", "Spaceship")]
+[sub_resource type="Animation" id="Animation_8dgdn"]
+resource_name = "MoonTransition"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(639, 359), Vector2(214, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.525, 2.525)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpaceshipLoop")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_lm8k6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(639, 359)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1w1t"]
+_data = {
+&"MoonTransition": SubResource("Animation_8dgdn"),
+&"RESET": SubResource("Animation_lm8k6")
+}
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("LettersDrifting", "Starfield", "Spaceship", "CameraAnimations")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -539,6 +614,7 @@ script = ExtResource("1_iruej")
 LettersDrifting = NodePath("Animations/LettersDrifting")
 Starfield = NodePath("Animations/StarfieldLoop")
 Spaceship = NodePath("Animations/SpaceshipLoop")
+CameraAnimations = NodePath("Animations/CameraAnimations")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(639, 359)
@@ -561,6 +637,11 @@ libraries = {
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_2xmls")
+}
+
+[node name="CameraAnimations" type="AnimationPlayer" parent="Animations"]
+libraries = {
+&"": SubResource("AnimationLibrary_p1w1t")
 }
 
 [node name="UIElements" type="Node" parent="."]
@@ -604,6 +685,8 @@ anchor_left = 0.0875
 anchor_top = 0.0291667
 anchor_right = 0.155469
 anchor_bottom = 0.2375
+offset_top = -2.47955e-05
+offset_bottom = -3.05176e-05
 rotation = -0.354302
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
@@ -620,6 +703,10 @@ anchor_left = 0.178906
 anchor_top = 0.0291667
 anchor_right = 0.251563
 anchor_bottom = 0.2375
+offset_left = 0.000335693
+offset_top = -2.47955e-05
+offset_right = 0.000335693
+offset_bottom = -3.05176e-05
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -635,6 +722,10 @@ anchor_left = 0.272656
 anchor_top = 0.0291667
 anchor_right = 0.345313
 anchor_bottom = 0.2375
+offset_left = 0.000335693
+offset_top = -2.47955e-05
+offset_right = 0.000335693
+offset_bottom = -3.05176e-05
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -650,6 +741,10 @@ anchor_left = 0.364062
 anchor_top = 0.0291667
 anchor_right = 0.442187
 anchor_bottom = 0.2375
+offset_left = 0.000610352
+offset_top = -2.47955e-05
+offset_right = 0.000610352
+offset_bottom = -3.05176e-05
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -680,6 +775,8 @@ anchor_left = 0.559375
 anchor_top = 0.0291667
 anchor_right = 0.6375
 anchor_bottom = 0.2375
+offset_top = -2.47955e-05
+offset_bottom = -3.05176e-05
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -695,6 +792,8 @@ anchor_left = 0.65625
 anchor_top = 0.0291667
 anchor_right = 0.734375
 anchor_bottom = 0.2375
+offset_top = -2.47955e-05
+offset_bottom = -3.05176e-05
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -710,6 +809,10 @@ anchor_left = 0.749219
 anchor_top = 0.0291667
 anchor_right = 0.827344
 anchor_bottom = 0.2375
+offset_left = -0.000305176
+offset_top = -2.47955e-05
+offset_right = -0.000366211
+offset_bottom = -3.05176e-05
 rotation = -0.354302
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
@@ -726,6 +829,10 @@ anchor_left = 0.839844
 anchor_top = 0.0291667
 anchor_right = 0.917969
 anchor_bottom = 0.2375
+offset_left = -0.000244141
+offset_top = -2.47955e-05
+offset_right = -0.000244141
+offset_bottom = -3.05176e-05
 rotation = 0.53058
 pivot_offset = Vector2(32, 63)
 theme_override_colors/font_color = Color(0.977344, 0.751413, 0.655028, 1)
@@ -805,3 +912,6 @@ theme_override_fonts/font = ExtResource("6_82l7r")
 theme_override_font_sizes/font_size = 66
 text = "QUIT
 "
+
+[connection signal="animation_finished" from="Animations/CameraAnimations" to="." method="_on_camera_animations_animation_finished"]
+[connection signal="pressed" from="UIElements/ButtonsContainer/PLAY" to="." method="_on_play_pressed"]
