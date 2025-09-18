@@ -10,6 +10,20 @@ public partial class HealthComponent : Node
     private int maxHealth;
     private int currentHealth;
 
+    /*
+    Health Initialize function is here because I'm making the stats as a custom resource and it'll all be set in the main code for both
+    player and enemy, so I just left it here for easy access woop woop.
+    */
+    public void HealthInitialize(int health)
+    {
+        maxHealth = health;
+        currentHealth = maxHealth;
+    }
+
+    /*
+    Damage function, this is for both players and enemies. Signals are in place because I want both actors to do something
+    when damaged and when they *DIE* RAAAA
+    */
     public void Damage(int damage)
     {
         currentHealth -= damage;
@@ -18,11 +32,15 @@ public partial class HealthComponent : Node
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            EmitSignal(nameof(Death)); // Emit death signal
+            EmitSignal(nameof(Death), currentHealth, maxHealth); // Emit death signal
         }
     }
 
-    private void Heal(int amount) // Heal function, this is only for the player.
+    /* 
+    Heal function, this is only for the player. 
+    MAYBE i'll do something for the enemies but as of rn and where I am I dont have any plans for the enemies to heal.
+    */
+    public void Heal(int amount)
     {
         currentHealth += amount;
         if (currentHealth > maxHealth)
