@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 
 public partial class MainMenu : Control
 {
-    // okay so for some reason I need to do 3 animation players for the 3 various sets so *fuck me then* lmao, this'll be funny
-    // to whomever that decompiles this later, hi Cedric.
+    /* 
+    okay so for some reason I need to do 3 animation players for the 3 various sets so *fuck me then* lmao, this'll be funny
+    to whomever that decompiles this later, hi Cedric.
+    */ 
     [Export] private AnimationPlayer LettersDrifting;
     [Export] private AnimationPlayer Starfield;
     [Export] private AnimationPlayer Spaceship;
@@ -19,8 +21,10 @@ public partial class MainMenu : Control
         LettersDrifting.Play("letters_drifting");
         Starfield.Play("StarfieldDriftLoop");
         Spaceship.Play("spaceshipLoop");
-        // Yes the names are inconsistent, bite me i was tired (this is in the event i forget to change them proper later lmao)
-        //TO DO: make names consistent, maybe also try to find a way to get these 3 animations to play from 1 player for efficiency
+        /* 
+        Yes the names are inconsistent, bite me i was tired (this is in the event i forget to change them proper later lmao)
+        I will need to make names consistent, maybe also try to find a way to get these 3 animations to play from 1 player for efficiency
+        */
     }
 
     private void _on_play_pressed()
