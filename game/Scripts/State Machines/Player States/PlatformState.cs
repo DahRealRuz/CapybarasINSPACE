@@ -12,9 +12,8 @@ public class PlatformState : IPlayerState
     {
         GD.Print("Exited platform state");
     }
-
-    public void HandleInput(float delta)
+    public void PhysicsUpdate(float delta)
     {
-        GD.Print("Handling input in platform state");
+        GD.Print("Physics updating platform state");
     }
 }

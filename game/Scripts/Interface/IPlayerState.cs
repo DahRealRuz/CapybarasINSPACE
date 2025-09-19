@@ -5,5 +5,5 @@ public interface IPlayerState
 {
     void EnterState();
     void ExitState();
-    void HandleInput(float delta);
+    void PhysicsUpdate(float delta);
 }
