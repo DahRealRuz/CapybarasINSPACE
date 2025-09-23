@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://c1t0nbbd1edpi"]
+[gd_scene load_steps=3 format=3 uid="uid://c1t0nbbd1edpi"]
+
+[ext_resource type="PackedScene" uid="uid://26t624dpail8" path="res://Scripts/Player/Heinrich.tscn" id="1_qp03m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl4mt"]
+size = Vector2(174, 20)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(87, 79)
+shape = SubResource("RectangleShape2D_dl4mt")
+
+[node name="Capybara" parent="StaticBody2D" instance=ExtResource("1_qp03m")]
+position = Vector2(24, 42)

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ZGravityMovement : Node, IPlayerState
+public partial class ZGravityMovement : Node, IState
 {
     public void EnterState()
     {
@@ -15,5 +15,10 @@ public partial class ZGravityMovement : Node, IPlayerState
     public void PhysicsUpdate(float delta)
     {
         GD.Print("Physics updating zero gravity state");
+    }
+
+    public void Update(float delta)
+    {
+        GD.Print("Updating zero gravity state");
     }
 }

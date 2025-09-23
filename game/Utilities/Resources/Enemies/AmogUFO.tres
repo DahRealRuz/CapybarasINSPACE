@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://jyx20ikduqi2"]
+
+[ext_resource type="Script" uid="uid://1of2lh0omt88" path="res://Scripts/Resources/Stats.cs" id="1_0mg33"]
+
+[resource]
+script = ExtResource("1_0mg33")
+Health = 150
+Speed = 35
+Defense = 25
+metadata/_custom_type_script = "uid://1of2lh0omt88"
