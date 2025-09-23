@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using System.ComponentModel;
 
-public class PlatformState : IPlayerState
+public class PlatformState : IState
 {
     public void EnterState()
     {
@@ -14,6 +15,9 @@ public class PlatformState : IPlayerState
     }
     public void PhysicsUpdate(float delta)
     {
-        GD.Print("Physics updating platform state");
+    }
+
+    public void Update(float delta)
+    {
     }
 }
