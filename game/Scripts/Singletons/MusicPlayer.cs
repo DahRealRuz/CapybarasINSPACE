@@ -25,9 +25,15 @@ public partial class MusicPlayer : AudioStreamPlayer2D
         switch (songName) 
         {
             case "Menu":
-                Stream = GD.Load<AudioStream>(MenuMusic);
-                Play();
-                GD.Print("MusicPlayer: Playing Menu Music");
+                if (MenuMusic == "") 
+                {
+                    GD.PrintErr("MusicPlayer: MenuMusic is not set in the inspector!");
+                    return;
+                } else {
+                    Stream = GD.Load<AudioStream>(MenuMusic);
+                    Play();
+                    GD.Print("MusicPlayer: Playing Menu Music");
+                }
                 break;
 
             default:
