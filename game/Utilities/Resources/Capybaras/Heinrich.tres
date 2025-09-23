@@ -7,4 +7,5 @@ script = ExtResource("1_41ksg")
 Health = 100
 Speed = 20
 Defense = 10
+Name = "Heinrich"
 metadata/_custom_type_script = "uid://1of2lh0omt88"
