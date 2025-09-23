@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://24qgef8ps147"]
+[gd_scene load_steps=2 format=3 uid="uid://24qgef8ps147"]
+
+[ext_resource type="Script" uid="uid://dlhclcwrjsp2m" path="res://Scripts/Singletons/DialoguePanel.cs" id="1_t4q2y"]
 
 [node name="DialoguePanel" type="Control"]
 layout_mode = 3
@@ -7,3 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t4q2y")
