@@ -1,8 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://24qgef8ps147"]
+[gd_scene load_steps=9 format=3 uid="uid://24qgef8ps147"]
 
 [ext_resource type="Script" uid="uid://dlhclcwrjsp2m" path="res://Scripts/Singletons/DialoguePanel.cs" id="1_t4q2y"]
+[ext_resource type="Texture2D" uid="uid://cskox3x3pvjct" path="res://Assets/UI/DialoguePanel.png" id="2_qvigx"]
+[ext_resource type="Texture2D" uid="uid://dlfmpv4ahgnod" path="res://Assets/UI/capybara.png" id="3_ed3g8"]
+[ext_resource type="FontFile" uid="uid://clof3ap64fkqg" path="res://Assets/UI/Fonts/SillyGames.ttf" id="4_7g2kp"]
 
-[node name="DialoguePanel" type="Control"]
+[sub_resource type="Animation" id="Animation_7mmew"]
+resource_name = " popIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialoguePanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 267), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q0gg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialoguePanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 267)]
+}
+
+[sub_resource type="Animation" id="Animation_b1lp6"]
+resource_name = "popDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialoguePanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 274)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11uj7"]
+_data = {
+&" popIn": SubResource("Animation_7mmew"),
+&"RESET": SubResource("Animation_q0gg3"),
+&"popDown": SubResource("Animation_b1lp6")
+}
+
+[node name="DialoguePanel" type="Control" node_paths=PackedStringArray("dialogueLabel", "animPlayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,3 +67,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t4q2y")
+dialogueLabel = NodePath("DialoguePanel/Label")
+animPlayer = NodePath("AnimationPlayer")
+
+[node name="DialoguePanel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 267.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qvigx")
+
+[node name="Capybara" type="Sprite2D" parent="DialoguePanel"]
+position = Vector2(123, 611)
+scale = Vector2(0.14887853, 0.14887853)
+texture = ExtResource("3_ed3g8")
+
+[node name="Label" type="Label" parent="DialoguePanel"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 548.0
+offset_right = 1202.0
+offset_bottom = 653.0
+theme_override_fonts/font = ExtResource("4_7g2kp")
+theme_override_font_sizes/font_size = 76
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_11uj7")
+}
