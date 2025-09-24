@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_u2s8p")
+DialogueName = "Tutorial1"
+DialogueLines = Array[String](["Guten Tag, Heinrich. I see you need some warming up to do, ja?", "Well, it's good exercise.", "I placed some diagrams around the wall, just follow what's written and alles im grünen Bereich."])
 metadata/_custom_type_script = "uid://tushhiiaa24t"

@@ -3,13 +3,18 @@ using System;
 
 public partial class DialoguePanel : Control
 {
-	[Signal] public delegate void NextDialogueEventHandler(); // Signal for next dialogue
-	[Signal] public delegate void DialogueFinishedEventHandler(); // Signal for when the dialogue is done
 
-	[Export] private Label dialogueLabel; // Label for dialogue text
+	// Signals for dialogue events
+	[Signal] public delegate void NextDialogueEventHandler(); 
+	[Signal] public delegate void DialogueFinishedEventHandler(); 
+	[Signal] public delegate void DialogueStartedEventHandler(); 
+
+	// UI and Animation
+	[Export] private Label dialogueLabel; 
 	[Export] private AnimationPlayer animPlayer;
 
-	public static DialoguePanel Instance { get; private set; } // Singleton instance
+	// Singleton instance
+	public static DialoguePanel Instance { get; private set; } 
 
     public override void _Ready()
     {
@@ -42,6 +47,7 @@ public partial class DialoguePanel : Control
 	public void DialoguePopIn()
 	{
 		animPlayer.Play("popIn");
+		EmitSignal(nameof(DialogueStarted)); // Emit signal when dialogue starts
 	}
 
 	public void DialoguePopDown()
