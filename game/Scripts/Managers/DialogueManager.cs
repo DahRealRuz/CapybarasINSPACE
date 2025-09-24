@@ -14,18 +14,21 @@ public partial class DialogueManager : Node
     private bool dialogActive = false; 
     public override void _Ready()
     {
-        // Connecting the signals from the Dialogue Panel to the Methods
+        // Connecting the signals from the Dialogue Panel to the methods in this manager
         Panel.NextDialogue += OnNextDialogue;
         Panel.DialogueFinished += OnDialogueFinished;
         Panel.DialogueStarted += OnDialogueStarted;
     }
 
-    public override void _Process(double delta) {
-        if (dialogActive && Input.IsActionJustPressed("ui_accept")) {
+    public override void _Process(double delta)
+    {
+        if (dialogActive && Input.IsActionJustPressed("ui_accept"))
+        {
             Panel.OnNextDialogue();
         }
     }
 
+    // Start a dialogue sequence
     public void StartDialogue(Dialogue dialogue)
     {
         if (dialogue == null || dialogue.Lines.Count == 0)

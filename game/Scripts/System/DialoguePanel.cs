@@ -13,40 +13,42 @@ public partial class DialoguePanel : Control
 	[Export] private Label dialogueLabel; 
 	[Export] private AnimationPlayer animPlayer;
 
-	public void SetDialogueText(string text) // Set the dialogue text
+	// This will set the text for the panel
+	public void SetDialogueText(string text) 
 	{
 		dialogueLabel.Text = text;
 	}
 
+	// This will be called when the player wants to see the next line of dialogue
 	public void OnNextDialogue()
 	{
-		ClearDialogueText(); // Clear current text
-		EmitSignal(nameof(NextDialogue)); // Emit signal for next dialogue
+		ClearDialogueText();
+		EmitSignal(nameof(NextDialogue));
 	}
 
+	// This will be called when the dialogue is finished
 	public void OnDialogueFinished()
 	{
-		EmitSignal(nameof(DialogueFinished)); // Emit signal when theres nothing more to be said
+		EmitSignal(nameof(DialogueFinished)); 
 		ClearDialogueText();
 		DialoguePopDown();
 	}
 
-	public void ClearDialogueText() // Clear the dialogue text
+	// This will clear the dialogue text
+	public void ClearDialogueText() 
 	{
 		dialogueLabel.Text = "";
 	}
 
+	// Animation Methods
 	public void DialoguePopIn()
 	{
-		GD.Print($"Panel pos before popIn: {Position}");
 		animPlayer.Play("popIn");
 		EmitSignal(nameof(DialogueStarted)); // Emit signal when dialogue starts
-		GD.Print("Im popping in!");
 	}
 
 	public void DialoguePopDown()
 	{
-		GD.Print($"Panel pos before popDown: {Position}");
 		animPlayer.Play("popDown");
 	}
 }
