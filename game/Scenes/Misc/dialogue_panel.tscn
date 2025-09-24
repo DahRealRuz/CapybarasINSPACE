@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://24qgef8ps147"]
+[gd_scene load_steps=10 format=3 uid="uid://24qgef8ps147"]
 
 [ext_resource type="Script" uid="uid://dlhclcwrjsp2m" path="res://Scripts/Singletons/DialoguePanel.cs" id="1_t4q2y"]
 [ext_resource type="Texture2D" uid="uid://cskox3x3pvjct" path="res://Assets/UI/DialoguePanel.png" id="2_qvigx"]
 [ext_resource type="Texture2D" uid="uid://dlfmpv4ahgnod" path="res://Assets/UI/capybara.png" id="3_ed3g8"]
 [ext_resource type="FontFile" uid="uid://clof3ap64fkqg" path="res://Assets/UI/Fonts/SillyGames.ttf" id="4_7g2kp"]
+[ext_resource type="AudioStream" uid="uid://bumri35vycbdl" path="res://Assets/SFX/radio_beep.mp3" id="5_ed3g8"]
 
 [sub_resource type="Animation" id="Animation_7mmew"]
 resource_name = " popIn"
@@ -20,6 +21,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 267), Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_q0gg3"]
 length = 0.001
@@ -34,6 +47,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 267)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_b1lp6"]
@@ -101,3 +126,6 @@ autowrap_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_11uj7")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ed3g8")

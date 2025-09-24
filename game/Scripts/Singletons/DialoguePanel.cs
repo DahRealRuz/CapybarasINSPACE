@@ -13,15 +13,6 @@ public partial class DialoguePanel : Control
 	[Export] private Label dialogueLabel; 
 	[Export] private AnimationPlayer animPlayer;
 
-	// Singleton instance
-	public static DialoguePanel Instance { get; private set; } 
-
-    public override void _Ready()
-    {
-		Instance = this;
-    }
-
-
 	public void SetDialogueText(string text) // Set the dialogue text
 	{
 		dialogueLabel.Text = text;
@@ -29,6 +20,7 @@ public partial class DialoguePanel : Control
 
 	public void OnNextDialogue()
 	{
+		ClearDialogueText(); // Clear current text
 		EmitSignal(nameof(NextDialogue)); // Emit signal for next dialogue
 	}
 

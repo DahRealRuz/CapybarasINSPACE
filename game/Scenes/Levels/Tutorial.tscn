@@ -1,17 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1t0nbbd1edpi"]
+[gd_scene load_steps=4 format=3 uid="uid://c1t0nbbd1edpi"]
 
-[ext_resource type="PackedScene" uid="uid://26t624dpail8" path="res://Scripts/Player/Heinrich.tscn" id="1_qp03m"]
+[ext_resource type="Script" uid="uid://c8ym4qqp4mi0g" path="res://Scripts/Misc/DialogueManager.cs" id="1_s8jsh"]
+[ext_resource type="Resource" uid="uid://karxx8jy8gld" path="res://Utilities/Resources/Dialogue/tutorial.tres" id="2_se31e"]
+[ext_resource type="PackedScene" uid="uid://24qgef8ps147" path="res://Scenes/Misc/dialogue_panel.tscn" id="3_fucd8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl4mt"]
-size = Vector2(174, 20)
+[node name="Tutorial" type="Node2D"]
 
-[node name="Node2D" type="Node2D"]
+[node name="DialogueManager" type="Node" parent="." node_paths=PackedStringArray("DialoguePanel")]
+script = ExtResource("1_s8jsh")
+Tutorial1 = ExtResource("2_se31e")
+DialoguePanel = NodePath("DialoguePanel")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(87, 79)
-shape = SubResource("RectangleShape2D_dl4mt")
-
-[node name="Capybara" parent="StaticBody2D" instance=ExtResource("1_qp03m")]
-position = Vector2(24, 42)
+[node name="DialoguePanel" parent="DialogueManager" instance=ExtResource("3_fucd8")]
