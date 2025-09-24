@@ -4,7 +4,7 @@ using System;
 public partial class DialoguePanel : Control
 {
 	[Signal] public delegate void NextDialogueEventHandler(); // Signal for next dialogue
-	[Signal] public delegate void DialogueFinishedEventHandler(); // Signal for dialogue done
+	[Signal] public delegate void DialogueFinishedEventHandler(); // Signal for when the dialogue is done
 
 	[Export] private Label dialogueLabel; // Label for dialogue text
 	[Export] private AnimationPlayer animPlayer;
@@ -22,13 +22,9 @@ public partial class DialoguePanel : Control
 		dialogueLabel.Text = text;
 	}
 
-	public void OnNextDialogueButtonPressed()
+	public void OnNextDialogue()
 	{
-		if (Input.IsActionJustPressed("ui_accept") && dialogueLabel.Text != "") // Check for input and if text is not empty
-		{
-			ClearDialogueText(); // Clear the dialogue text
-			EmitSignal(nameof(NextDialogue)); // Emit signal when dialogue is finished
-		}
+		EmitSignal(nameof(NextDialogue)); // Emit signal for next dialogue
 	}
 
 	public void OnDialogueFinished()
