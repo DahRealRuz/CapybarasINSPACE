@@ -3,5 +3,7 @@
 [ext_resource type="Script" uid="uid://cjvop7iq4hkq7" path="res://Scripts/Singletons/MusicPlayer.cs" id="1_1ew83"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D"]
+bus = &"Music"
+area_mask = 2
 script = ExtResource("1_1ew83")
 MenuMusic = "uid://cmg58wu5np0fm"
