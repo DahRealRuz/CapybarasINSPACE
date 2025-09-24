@@ -1,25 +1,42 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class DialogueManager : Node
 {
     // Dialogue Lines and UI
     [Export] public Dialogue Tutorial1;
-    [Export] public Control Panel;
+    //[Export] public Dialogue Tutorial2;
+    [Export] public DialoguePanel Panel;
 
     private int currentLine = 0; // Track the current line of dialogue
-
+    private Dialogue currentDialogue = null;
+    private bool dialogActive = false; 
     public override void _Ready()
     {
-        // Conectingg the signals from the Dialogue Panel to the Methods
+        // Connecting the signals from the Dialogue Panel to the Methods
         Panel.NextDialogue += OnNextDialogue;
         Panel.DialogueFinished += OnDialogueFinished;
         Panel.DialogueStarted += OnDialogueStarted;
     }
 
+    public override void _Process(double delta) {
+        if (dialogActive && Input.IsActionJustPressed("ui_accept")) {
+            Panel.OnNextDialogue();
+        }
+    }
+
     public void StartDialogue(Dialogue dialogue)
     {
+        if (dialogue == null || dialogue.Lines.Count == 0)
+        {
+            GD.PrintErr("Dialogue is null or has no lines.");
+            return;
+        }
+        currentDialogue = dialogue;
         currentLine = 0;
+        dialogActive = true;
+
         Panel.DialoguePopIn();
         ShowCurrentLine();
     }
@@ -27,30 +44,33 @@ public partial class DialogueManager : Node
     private void OnNextDialogue()
     {
         currentLine++;
-        if (currentLine < Tutorial1.Lines.Count)
+        if (currentLine < currentDialogue.Lines.Count)
         {
             ShowCurrentLine();
         }
         else
         {
-            Panel.OnDialogueFinished();
+            Panel.OnDialogueFinished(); // End the dialogue if there are no more lines
+            dialogActive = false;
         }
     }
 
     private void ShowCurrentLine()
     {
-        Panel.SetDialogueText(Tutorial1.Lines[currentLine]);
+        if (currentDialogue == null) return;
+        GD.Print($"Showing line {currentLine}: {currentDialogue.Lines[currentLine]}");
+        Panel.SetDialogueText(currentDialogue.Lines[currentLine]);
     }
 
     private void OnDialogueFinished()
     {
-        GD.Print("Dialogue Finished");
-        // Additional logic when dialogue finishes can be added here
+        Engine.TimeScale = 1.0f; // Resume the game when dialogue finishes
+        dialogActive = false;
     }
 
-    private void OnDialogueStarted()
+    private async void OnDialogueStarted()
     {
-        GD.Print("Dialogue Started");
-        // Additional logic when dialogue starts can be added here
+        await ToSignal(GetTree().CreateTimer(0.75f), "timeout");
+        Engine.TimeScale = 0.0f; // Pause the game when dialogue starts
     }   
 }

@@ -38,12 +38,15 @@ public partial class DialoguePanel : Control
 
 	public void DialoguePopIn()
 	{
+		GD.Print($"Panel pos before popIn: {Position}");
 		animPlayer.Play("popIn");
 		EmitSignal(nameof(DialogueStarted)); // Emit signal when dialogue starts
+		GD.Print("Im popping in!");
 	}
 
 	public void DialoguePopDown()
 	{
+		GD.Print($"Panel pos before popDown: {Position}");
 		animPlayer.Play("popDown");
 	}
 }

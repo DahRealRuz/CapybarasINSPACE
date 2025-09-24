@@ -5,5 +5,4 @@
 [resource]
 script = ExtResource("1_8s7sa")
 DialogueName = "Tutorial2"
-DialogueLines = Array[String](["Wunderbar! You did good Heinrich.", "You haven't gotten frail from all that space travel.", "Next, we'll need to check if your Zero Gravity feature on your suit is working.", "Continue on, you'll see I left further instructions on the wall. Viel Erfolg!"])
 metadata/_custom_type_script = "uid://tushhiiaa24t"

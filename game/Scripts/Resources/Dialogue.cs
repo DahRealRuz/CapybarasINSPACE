@@ -6,5 +6,5 @@ using System.Collections.Generic;
 public partial class Dialogue : Resource
 {
     [Export] public string DialogueName { get; set; } = "";
-    [Export] public Godot.Collections.Array<string> DialogueLines { get; set; } = new Godot.Collections.Array<string>();
+    [Export] public Godot.Collections.Array<string> Lines { get; set; } = new Godot.Collections.Array<string>();
 }
