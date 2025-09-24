@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://24qgef8ps147"]
 
-[ext_resource type="Script" uid="uid://dlhclcwrjsp2m" path="res://Scripts/Singletons/DialoguePanel.cs" id="1_t4q2y"]
+[ext_resource type="Script" uid="uid://dlhclcwrjsp2m" path="res://Scripts/System/DialoguePanel.cs" id="1_t4q2y"]
 [ext_resource type="Texture2D" uid="uid://cskox3x3pvjct" path="res://Assets/UI/DialoguePanel.png" id="2_qvigx"]
 [ext_resource type="Texture2D" uid="uid://dlfmpv4ahgnod" path="res://Assets/UI/capybara.png" id="3_ed3g8"]
 [ext_resource type="FontFile" uid="uid://clof3ap64fkqg" path="res://Assets/UI/Fonts/SillyGames.ttf" id="4_7g2kp"]

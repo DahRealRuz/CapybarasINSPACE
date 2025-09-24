@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bq3jnh35elk4k"]
+
+[ext_resource type="Script" uid="uid://tushhiiaa24t" path="res://Scripts/Resources/Dialogue.cs" id="1_8s7sa"]
+
+[resource]
+script = ExtResource("1_8s7sa")
+DialogueName = "Tutorial2"
+DialogueLines = Array[String](["Wunderbar! You did good Heinrich.", "You haven't gotten frail from all that space travel.", "Next, we'll need to check if your Zero Gravity feature on your suit is working.", "Continue on, you'll see I left further instructions on the wall. Viel Erfolg!"])
+metadata/_custom_type_script = "uid://tushhiiaa24t"
