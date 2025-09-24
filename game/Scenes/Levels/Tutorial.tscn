@@ -17,3 +17,5 @@ Panel = NodePath("DialoguePanel")
 [node name="DialoguePanel" parent="DialogueManager" instance=ExtResource("3_fucd8")]
 offset_left = 1.0
 offset_right = 1.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
